@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Penyewaan | Portfolio Ayu Rahma Naifah</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <style>
+        :root { 
+            --primary-color: #6366f1; --primary-hover: #4f46e5; --secondary-color: #ec4899; 
+            --bg-light: #f8fafc; --bg-card: #ffffff; --text-dark: #1e293b; --text-muted: #64748b; 
+        }
+        .pink-theme { 
+            --primary-color: #ec4899; --primary-hover: #db2777; --bg-light: #fff1f2; --text-dark: #831843; 
+        }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-light); color: var(--text-dark); }
+        .form-container { background: var(--bg-card); border-radius: 20px; box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1); border: 1px solid rgba(0,0,0,0.05); }
+        .summary-card { background: linear-gradient(135deg, rgba(99,102,241,0.05), rgba(236,72,153,0.05)); border-radius: 16px; border: 1px solid rgba(99,102,241,0.1); }
+        .pink-theme .summary-card { background: rgba(236,72,153,0.05); border-color: rgba(236,72,153,0.2); }
+        .btn-submit { background: linear-gradient(135deg, var(--primary-color), var(--primary-hover)); color: white; border: none; font-weight: 600; padding: 1rem; border-radius: 12px; transition: all 0.3s; }
+        .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); color: white; }
+        #error-state { display: none; }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="../index.html" style="color: var(--primary-color)"><i class="bi bi-person-circle me-2"></i>Portfolio Ayu</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="care_car.html"><i class="bi bi-arrow-left me-1"></i>Kembali ke Katalog</a></li>
+      </ul>
+      <button id="theme-toggle" class="btn btn-sm btn-outline-secondary ms-lg-3 rounded-pill px-3">Light</button>
+    </div>
+  </div>
+</nav>
+
+<main class="container py-5">
+    
+    <div id="error-state" class="text-center py-5">
+        <i class="bi bi-exclamation-triangle-fill text-warning display-1 mb-3"></i>
+        <h2 class="fw-bold">Akses Tidak Valid</h2>
+        <p class="text-muted">Anda tidak bisa mengakses halaman ini secara langsung. Silakan pilih kendaraan dari katalog terlebih dahulu.</p>
+        <a href="care_car.html" class="btn btn-primary mt-3 px-4 py-2 rounded-pill">Kembali ke Katalog</a>
+    </div>
+
+    <div id="form-state" class="row g-4" style="display: none;">
+        <div class="col-12 mb-2">
+            <h2 class="fw-bold display-6">Lengkapi Data Penyewa</h2>
+            <p class="text-muted">Pastikan data yang diisi sesuai dengan identitas resmi (KTP/Paspor).</p>
+        </div>
+
+        <div class="col-lg-7">
+            <div class="form-container p-4 p-md-5">
+                <form id="rentalForm" class="needs-validation" novalidate>
+                    <h5 class="fw-bold mb-4 border-bottom pb-2">Data Pribadi</h5>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="nama" placeholder="Nama Lengkap" required>
+                                <label for="nama">Nama Lengkap sesuai KTP</label>
+                                <div class="invalid-feedback">Nama wajib diisi.</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="number" class="form-control" id="nik" placeholder="NIK" required>
+                                <label for="nik">Nomor Induk Kependudukan (NIK)</label>
+                                <div class="invalid-feedback">NIK wajib diisi dengan angka.</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="email" placeholder="Email" required>
+                                <label for="email">Alamat Email</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="tel" class="form-control" id="telepon" placeholder="Nomor WhatsApp" required>
+                                <label for="telepon">Nomor WhatsApp</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <textarea class="form-control" id="alamat" placeholder="Alamat" style="height: 100px" required></textarea>
+                                <label for="alamat">Alamat Domisili</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h5 class="fw-bold mb-4 mt-5 border-bottom pb-2">Metode Pembayaran</h5>
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <select class="form-select form-select-lg" id="pembayaran" required>
+                                <option value="" selected disabled>Pilih Metode Transfer</option>
+                                <option value="BCA">BCA Virtual Account</option>
+                                <option value="Mandiri">Mandiri Virtual Account</option>
+                                <option value="QRIS">QRIS</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mt-5">
+                        <button class="btn btn-submit w-100 fs-5" type="submit">Konfirmasi & Lanjutkan Pembayaran</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-lg-5">
+            <div class="summary-card p-4 sticky-top" style="top: 100px;">
+                <h5 class="fw-bold mb-4">Ringkasan Pesanan</h5>
+                
+                <div class="text-center mb-4">
+                    <img id="sum-img" src="" alt="Car Image" class="img-fluid rounded-3 shadow-sm mb-3" style="max-height: 200px; object-fit: cover; width: 100%;">
+                    <h4 class="fw-bold mb-1" id="sum-name">Memuat...</h4>
+                    <span class="badge bg-primary-subtle text-primary" id="sum-loc"><i class="bi bi-geo-alt-fill me-1"></i>...</span>
+                </div>
+
+                <div class="d-flex justify-content-between mb-2 pb-2 border-bottom">
+                    <span class="text-muted">Tanggal Mulai</span>
+                    <span class="fw-medium" id="sum-start">...</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2 pb-2 border-bottom">
+                    <span class="text-muted">Tanggal Kembali</span>
+                    <span class="fw-medium" id="sum-end">...</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2 pb-2 border-bottom">
+                    <span class="text-muted">Durasi Sewa</span>
+                    <span class="fw-medium" id="sum-duration">...</span>
+                </div>
+                <div class="d-flex justify-content-between mb-4 pb-2 border-bottom">
+                    <span class="text-muted">Harga per Hari</span>
+                    <span class="fw-medium" id="sum-price">...</span>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center bg-white p-3 rounded-3 shadow-sm border">
+                    <span class="fw-bold text-dark">Total Biaya</span>
+                    <h4 class="fw-bold text-primary mb-0" id="sum-total">...</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+    // 1. Data Mocking (Di aplikasi nyata, ini diambil via Fetch API dari backend)
+    const carData = [
+        { id: 1, name: "BMW M4", locationName: "Yogyakarta", price: 3500000, image: "https://i.pinimg.com/1200x/b6/ac/26/b6ac26e6ddbcf4adc924c95083089f45.jpg" },
+        { id: 2, name: "BMW M5", locationName: "Bali", price: 4200000, image: "https://i.pinimg.com/736x/85/67/5f/85675f7c528f1d08b0564bce890d0709.jpg" },
+        { id: 3, name: "Nissan GTR R34", locationName: "Yogyakarta", price: 5000000, image: "https://i.pinimg.com/1200x/af/37/29/af3729e19efaddd76e36c7ff30fcbf31.jpg" }
+    ];
+
+    // 2. Logika Menangkap URL Parameters
+    document.addEventListener("DOMContentLoaded", () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const carId = parseInt(urlParams.get('carId'));
+        const startDate = urlParams.get('start');
+        const endDate = urlParams.get('end');
+
+        // Validasi: Jika data tidak lengkap, tampilkan layar error
+        if (!carId || !startDate || !endDate) {
+            document.getElementById('error-state').style.display = 'block';
+            return;
+        }
+
+        // Cari mobil berdasarkan ID
+        const selectedCar = carData.find(car => car.id === carId);
+        
+        if (selectedCar) {
+            document.getElementById('form-state').style.display = 'flex';
+            
+            // Hitung Durasi
+            const start = new Date(startDate);
+            const end = new Date(endDate);
+            const duration = (end - start) / (1000 * 60 * 60 * 24);
+            const total = duration * selectedCar.price;
+
+            // Format Uang & Tanggal
+            const fmtMoney = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 });
+            const fmtDate = new Intl.DateTimeFormat('id-ID', { dateStyle: 'medium' });
+
+            // Injeksi data ke UI Ringkasan
+            document.getElementById('sum-img').src = selectedCar.image;
+            document.getElementById('sum-name').textContent = selectedCar.name;
+            document.getElementById('sum-loc').innerHTML = `<i class="bi bi-geo-alt-fill me-1"></i> ${selectedCar.locationName}`;
+            document.getElementById('sum-start').textContent = fmtDate.format(start);
+            document.getElementById('sum-end').textContent = fmtDate.format(end);
+            document.getElementById('sum-duration').textContent = `${duration} Hari`;
+            document.getElementById('sum-price').textContent = fmtMoney.format(selectedCar.price);
+            document.getElementById('sum-total').textContent = fmtMoney.format(total);
+        } else {
+            document.getElementById('error-state').style.display = 'block';
+        }
+    });
+
+    // 3. Logika Validasi Form saat disubmit
+    const form = document.getElementById('rentalForm');
+    form.addEventListener('submit', function (event) {
+        event.preventDefault(); // Mencegah reload halaman
+        
+        if (!form.checkValidity()) {
+            event.stopPropagation();
+            form.classList.add('was-validated');
+            return;
+        }
+
+        // Jika form valid, simulasikan proses sukses
+        const nama = document.getElementById('nama').value;
+        alert(`Terima kasih ${nama}. Data Anda telah terekam di sistem. Anda akan dialihkan ke gerbang pembayaran.`);
+        // window.location.href = 'success.html'; // Contoh pengalihan di dunia nyata
+    });
+
+    // Theme Toggle Logic
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('pink-theme');
+        const isPink = document.body.classList.contains('pink-theme');
+        localStorage.setItem('theme', isPink ? 'pink' : 'light');
+        themeToggle.textContent = isPink ? 'Pink' : 'Light';
+    });
+    if(localStorage.getItem('theme') === 'pink') { document.body.classList.add('pink-theme'); themeToggle.textContent = 'Pink'; }
+</script>
+</body>
+</html>
