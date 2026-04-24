@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,107 +9,313 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <style>
-        :root { --primary-color: #6366f1; --primary-hover: #4f46e5; --secondary-color: #ec4899; --bg-light: #f8fafc; --bg-card: #ffffff; --text-dark: #1e293b; --text-muted: #64748b; --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05); --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1); --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1); --transition: all 0.3s ease; }
-        .pink-theme { --primary-color: #ec4899; --primary-hover: #db2777; --secondary-color: #f472b6; --bg-light: #fff1f2; --bg-card: #ffffff; --text-dark: #831843; --text-muted: #9d174d; --shadow-sm: 0 1px 2px 0 rgb(236 72 153 / 0.08); --shadow-md: 0 4px 6px -1px rgb(236 72 153 / 0.12); --shadow-lg: 0 10px 15px -3px rgb(236 72 153 / 0.15); }
+        /* 1. VARIABEL TEMA */
+        :root { 
+            --primary-color: #6366f1; 
+            --primary-hover: #4f46e5; 
+            --secondary-color: #ec4899; 
+            --bg-light: #f8fafc; 
+            --bg-card: #ffffff; 
+            --text-dark: #1e293b; 
+            --text-muted: #64748b; 
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05); 
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1); 
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1); 
+            --transition: all 0.3s ease; 
+        }
+        .pink-theme { 
+            --primary-color: #ec4899; 
+            --primary-hover: #db2777; 
+            --secondary-color: #f472b6; 
+            --bg-light: #fff1f2; 
+            --bg-card: #ffffff; 
+            --text-dark: #831843; 
+            --text-muted: #9d174d; 
+            --shadow-sm: 0 1px 2px 0 rgb(236 72 153 / 0.08); 
+            --shadow-md: 0 4px 6px -1px rgb(236 72 153 / 0.12); 
+            --shadow-lg: 0 10px 15px -3px rgb(236 72 153 / 0.15); 
+        }
+
+        /* 2. BASE STYLES */
         * { scroll-behavior: smooth; transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
         body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg-light); color: var(--text-dark); line-height: 1.7; min-height: 100vh; display: flex; flex-direction: column; }
+        
+        /* 3. NAVBAR */
         .navbar { background: rgba(255, 255, 255, 0.95) !important; backdrop-filter: blur(10px); box-shadow: var(--shadow-sm); position: sticky; top: 0; z-index: 1000; }
         .navbar-brand { font-weight: 700; color: var(--primary-color) !important; }
         .nav-link { font-weight: 500; color: var(--text-dark) !important; transition: var(--transition); }
         .nav-link:hover, .nav-link.active { color: var(--primary-color) !important; }
+
+        /* 4. LAYOUT HERO */
         .page-header { background: linear-gradient(135deg, var(--primary-color)10 0%, var(--secondary-color)10 100%); padding: 3rem 0; border-bottom: 1px solid rgba(99, 102, 241, 0.1); margin-bottom: 3rem; }
         .page-title { font-weight: 700; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        
+        /* 5. CONTACT FORM & CARD */
         .contact-wrapper { flex: 1; display: flex; align-items: center; padding: 2rem 0; }
-        .contact-card { background: var(--bg-card); border-radius: 24px; padding: 2.5rem; box-shadow: var(--shadow-lg); max-width: 650px; margin: 0 auto; width: 100%; border: 1px solid rgba(99, 102, 241, 0.1); }
+        .contact-card { background: var(--bg-card); border-radius: 24px; padding: 2.5rem; box-shadow: var(--shadow-lg); max-width: 650px; margin: 0 auto; width: 100%; border: 1px solid rgba(0, 0, 0, 0.05); }
         .contact-header { text-align: center; margin-bottom: 2rem; }
         .contact-icon { width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 2rem; box-shadow: var(--shadow-md); }
         .contact-header h2 { font-weight: 700; color: var(--text-dark); margin-bottom: 0.5rem; }
-        .contact-header p { color: var(--text-muted); margin: 0; }
+        
+        /* Input & Form */
         .form-floating > .form-control { border-radius: 12px; border: 2px solid #e2e8f0; transition: var(--transition); padding: 1rem; }
         .form-floating > .form-control:focus { border-color: var(--primary-color); box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15); }
         .form-floating > .form-control:not(:placeholder-shown) { border-color: var(--primary-color); }
         .form-floating > label { color: var(--text-muted); padding: 1rem; }
         .form-floating > textarea.form-control { height: auto; min-height: 120px; padding-top: 1.5rem; }
+        
+        /* Button */
         .btn-submit { background: linear-gradient(135deg, var(--primary-color), var(--primary-hover)); border: none; padding: 0.875rem 2.5rem; font-weight: 600; border-radius: 12px; transition: var(--transition); width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: white !important; }
         .btn-submit:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        
+        /* View Success */
         .success-message { display: none; text-align: center; padding: 2rem; }
         .success-message.show { display: block; animation: fadeInUp 0.5s ease; }
         .success-icon { width: 100px; height: 100px; background: rgba(34, 197, 94, 0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: #22c55e; font-size: 3rem; }
-        .contact-info { background: var(--bg-card); border-radius: 20px; padding: 2rem; box-shadow: var(--shadow-md); margin-top: 2rem; }
+        
+        /* Contact Info Bawah */
+        .contact-info { background: var(--bg-card); border-radius: 20px; padding: 2rem; box-shadow: var(--shadow-md); margin-top: 2rem; border: 1px solid rgba(0,0,0,0.05); }
         .contact-info-item { display: flex; align-items: flex-start; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
         .contact-info-item:last-child { border-bottom: none; }
         .contact-info-icon { width: 40px; height: 40px; background: rgba(99, 102, 241, 0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--primary-color); flex-shrink: 0; }
         .contact-info-text h6 { font-weight: 600; color: var(--text-dark); margin-bottom: 0.25rem; }
         .contact-info-text p, .contact-info-text a { color: var(--text-muted); text-decoration: none; margin: 0; font-size: 0.95rem; transition: var(--transition); }
         .contact-info-text a:hover { color: var(--primary-color); }
+        
+        /* 6. FOOTER & ANIMASI */
         footer { background: linear-gradient(135deg, #1e293b, #0f172a); color: #cbd5e1; padding: 2.5rem 0 1.5rem; margin-top: auto; }
         .social-links a { color: #cbd5e1; text-decoration: none; padding: 0.5rem 1rem; border-radius: 8px; transition: var(--transition); display: inline-flex; align-items: center; gap: 0.5rem; margin: 0.25rem; }
         .social-links a:hover { background: rgba(255, 255, 255, 0.1); color: white; transform: translateY(-2px); }
         .footer-copyright { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 1.5rem; margin-top: 1.5rem; font-size: 0.9rem; color: #94a3b8; }
+        
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         .animate-fade-in { animation: fadeInUp 0.6s ease forwards; opacity: 0; }
         .delay-1 { animation-delay: 0.1s; } .delay-2 { animation-delay: 0.2s; }
+        
         @media (max-width: 768px) { .page-header { padding: 2rem 0; } .contact-card { padding: 2rem 1.5rem; margin: 0 1rem; } }
     </style>
 </head>
 <body>
+
 <nav class="navbar navbar-expand-lg navbar-light">
   <div class="container">
     <a class="navbar-brand" href="index.html"><i class="bi bi-person-circle me-2"></i>Portfolio Ayu</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link active" href="index.html"><i class="bi bi-house me-1"></i>Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house me-1"></i>Home</a></li>
         <li class="nav-item"><a class="nav-link" href="tugas.html"><i class="bi bi-journal-text me-1"></i>Tugas</a></li>
         <li class="nav-item"><a class="nav-link" href="list.html"><i class="bi bi-person me-1"></i>About</a></li>
-        <li class="nav-item"><a class="nav-link" href="form.html"><i class="bi bi-envelope me-1"></i>Contact</a></li>
-        <li class="nav-item"><a class="nav-link" href="pertemuan3/care_car.html"><i class="bi bi-car-front-fill"></i>Car rental</a></li>
+        <li class="nav-item"><a class="nav-link active" href="form.html"><i class="bi bi-envelope me-1"></i>Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="pertemuan3/care_car.html"><i class="bi bi-car-front-fill me-1"></i>Car rental</a></li>
       </ul>
-      <button id="theme-toggle" class="btn btn-sm btn-outline-secondary mt-2 mt-lg-0 ms-lg-3 rounded-pill px-3"><i class="bi bi-brightness-high-fill me-1"></i> Light</button>
+      <button id="theme-toggle" class="btn btn-sm btn-outline-secondary mt-2 mt-lg-0 ms-lg-3 rounded-pill px-3">
+          <i class="bi bi-brightness-high-fill me-1"></i> Light
+      </button>
     </div>
   </div>
 </nav>
 
-<header class="page-header text-center"><div class="container"><h1 class="display-6 page-title mb-2 animate-fade-in"><i class="bi bi-chat-heart me-2"></i>Get In Touch</h1><p class="text-muted mb-0 animate-fade-in delay-1">Punya pertanyaan atau ingin kolaborasi? Saya siap mendengarkan! 👋</p></div></header>
-
-<main class="contact-wrapper"><div class="container"><div class="row justify-content-center"><div class="col-lg-8">
-    <div class="contact-card animate-fade-in">
-        <div id="formView"><div class="contact-header"><div class="contact-icon"><i class="bi bi-send"></i></div><h2>Kirim Pesan</h2><p>Isi form di bawah ini dan saya akan menghubungi Anda secepatnya.</p></div>
-        <form id="contactForm" class="needs-validation" novalidate>
-            <div class="form-floating mb-3"><input type="text" class="form-control" id="name" name="name" placeholder="Nama" pattern="^[A-Za-z\s]{3,50}$" required><label for="name"><i class="bi bi-person me-1"></i>Nama Lengkap <span class="text-danger">*</span></label><div class="invalid-feedback">Mohon masukkan nama lengkap Anda.</div></div>
-            <div class="form-floating mb-3"><input type="email" class="form-control" id="email" name="email" placeholder="Email" required><label for="email"><i class="bi bi-envelope me-1"></i>Email <span class="text-danger">*</span></label><div class="invalid-feedback">Mohon masukkan email yang valid.</div></div>
-            <div class="form-floating mb-3"><input type="text" class="form-control" id="subject" name="subject" placeholder="Subjek"><label for="subject"><i class="bi bi-tag me-1"></i>Subjek (Opsional)</label></div>
-            <div class="form-floating mb-4"><textarea class="form-control" id="message" name="message" placeholder="Pesan" style="min-height:120px" required></textarea><label for="message"><i class="bi bi-chat-left-text me-1"></i>Pesan Anda <span class="text-danger">*</span></label></div>
-            <div class="alert alert-light border mb-4 py-2"><small class="text-muted"><i class="bi bi-shield-check me-1"></i> Data Anda aman & tidak dibagikan.</small></div>
-            <button type="submit" class="btn btn-submit" id="submitBtn"><i class="bi bi-send-fill"></i><span>Kirim Pesan</span></button>
-        </form></div>
-        <div id="successView" class="success-message"><div class="success-icon"><i class="bi bi-check2-circle"></i></div><h3>Pesan Terkirim! 🎉</h3><p>Terima kasih telah menghubungi saya.</p><a href="index.html" class="btn btn-outline-primary"><i class="bi bi-house me-1"></i>Kembali ke Portfolio</a></div>
+<header class="page-header text-center">
+    <div class="container">
+        <h1 class="display-6 page-title mb-2 animate-fade-in"><i class="bi bi-chat-heart me-2"></i>Get In Touch</h1>
+        <p class="text-muted mb-0 animate-fade-in delay-1">Punya pertanyaan atau ingin kolaborasi? Saya siap mendengarkan! 👋</p>
     </div>
-    <div class="contact-info animate-fade-in delay-1"><h5 class="mb-4"><i class="bi bi-info-circle me-2"></i>Informasi Lainnya</h5>
-        <div class="contact-info-item"><div class="contact-info-icon"><i class="bi bi-envelope-fill"></i></div><div class="contact-info-text"><h6>Email</h6><a href="mailto:ayurahmanaifah04@gmail.com">ayurahmanaifah04@gmail.com</a></div></div>
-        <div class="contact-info-item"><div class="contact-info-icon"><i class="bi bi-whatsapp"></i></div><div class="contact-info-text"><h6>WhatsApp</h6><a href="https://wa.me/6281234567890" target="_blank">+62 812-3456-7890</a></div></div>
-        <div class="contact-info-item"><div class="contact-info-icon"><i class="bi bi-geo-alt-fill"></i></div><div class="contact-info-text"><h6>Lokasi</h6><p>Yogyakarta, Indonesia</p></div></div>
-    </div>
-</div></div></div></main>
+</header>
 
-<footer><div class="container text-center"><div class="mb-4"><h5 class="text-white mb-3">Let's Connect!</h5><div class="social-links d-flex justify-content-center gap-2 flex-wrap"><a href="mailto:ayu.rahma@email.com"><i class="bi bi-envelope-fill"></i> Email</a><a href="https://wa.me/6281234567890" target="_blank"><i class="bi bi-whatsapp"></i> WhatsApp</a><a href="https://linkedin.com/in/ayurahmanaifah" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a><a href="https://github.com/ayurahma" target="_blank"><i class="bi bi-github"></i> GitHub</a></div></div><div class="footer-copyright"><p class="mb-0">© <span id="year"></span> <strong>Ayu Rahma Naifah</strong>. All Rights Reserved. 🇮🇩</p><p class="mb-0 mt-1 small">NIM: 241110099 | Universitas Mercu Buana Yogyakarta</p></div></div></footer>
+<main class="contact-wrapper">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                
+                <div class="contact-card animate-fade-in">
+                    
+                    <div id="formView">
+                        <div class="contact-header">
+                            <div class="contact-icon"><i class="bi bi-send"></i></div>
+                            <h2>Kirim Pesan</h2>
+                            <p>Isi form di bawah ini dan saya akan menghubungi Anda secepatnya.</p>
+                        </div>
+                        
+                        <form id="contactForm" class="needs-validation" novalidate>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Nama" pattern="^[A-Za-z\s]{3,50}$" required>
+                                <label for="name"><i class="bi bi-person me-1"></i>Nama Lengkap <span class="text-danger">*</span></label>
+                                <div class="invalid-feedback">Mohon masukkan nama lengkap Anda.</div>
+                            </div>
+                            
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                                <label for="email"><i class="bi bi-envelope me-1"></i>Email <span class="text-danger">*</span></label>
+                                <div class="invalid-feedback">Mohon masukkan email yang valid.</div>
+                            </div>
+                            
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Subjek">
+                                <label for="subject"><i class="bi bi-tag me-1"></i>Subjek (Opsional)</label>
+                            </div>
+                            
+                            <div class="form-floating mb-4">
+                                <textarea class="form-control" id="message" name="message" placeholder="Pesan" required></textarea>
+                                <label for="message"><i class="bi bi-chat-left-text me-1"></i>Pesan Anda <span class="text-danger">*</span></label>
+                            </div>
+                            
+                            <div class="alert alert-light border mb-4 py-2">
+                                <small class="text-muted"><i class="bi bi-shield-check me-1"></i> Data Anda aman & tidak dibagikan.</small>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-submit" id="submitBtn">
+                                <i class="bi bi-send-fill"></i><span>Kirim Pesan</span>
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <div id="successView" class="success-message">
+                        <div class="success-icon"><i class="bi bi-check2-circle"></i></div>
+                        <h3>Pesan Terkirim! 🎉</h3>
+                        <p class="text-muted mb-4">Terima kasih telah menghubungi saya. Saya akan merespons melalui email secepatnya.</p>
+                        <button class="btn btn-outline-primary px-4" onclick="location.reload()">Kirim Pesan Baru</button>
+                    </div>
+                </div>
+                
+                <div class="contact-info animate-fade-in delay-1">
+                    <h5 class="mb-4 fw-bold"><i class="bi bi-info-circle me-2"></i>Informasi Lainnya</h5>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon"><i class="bi bi-envelope-fill"></i></div>
+                        <div class="contact-info-text">
+                            <h6>Email</h6>
+                            <a href="mailto:ayurahmanaifah04@gmail.com">ayurahmanaifah04@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon"><i class="bi bi-whatsapp"></i></div>
+                        <div class="contact-info-text">
+                            <h6>WhatsApp</h6>
+                            <a href="https://wa.me/6281234567890" target="_blank">+62 812-3456-7890</a>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                        <div class="contact-info-text">
+                            <h6>Lokasi</h6>
+                            <p>Yogyakarta, Indonesia</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="text-center">
+    <div class="container">
+        <div class="mb-4">
+            <h5 class="text-white mb-3">Let's Connect!</h5>
+            <div class="social-links d-flex justify-content-center gap-2 flex-wrap">
+                <a href="mailto:ayurahmanaifah04@gmail.com"><i class="bi bi-envelope-fill"></i> Email</a>
+                <a href="https://wa.me/6281234567890" target="_blank"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+                <a href="https://linkedin.com/in/ayurahmanaifah" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/ayurahma" target="_blank"><i class="bi bi-github"></i> GitHub</a>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p class="mb-0">© <span id="year"></span> <strong>Ayu Rahma Naifah</strong>. All Rights Reserved. 🇮🇩</p>
+            <p class="mb-0 mt-1 small">NIM: 241110099 | Universitas Mercu Buana Yogyakarta</p>
+        </div>
+    </div>
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    const form = document.getElementById('contactForm'), formView = document.getElementById('formView'), successView = document.getElementById('successView'), submitBtn = document.getElementById('submitBtn');
-    form.addEventListener('submit', e => { e.preventDefault(); e.stopPropagation(); if (!form.checkValidity()) { form.classList.add('was-validated'); return; } submitBtn.disabled = true; submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Mengirim...'; setTimeout(() => { formView.style.display = 'none'; successView.classList.add('show'); form.reset(); form.classList.remove('was-validated'); submitBtn.disabled = false; submitBtn.innerHTML = '<i class="bi bi-send-fill"></i><span>Kirim Pesan</span>'; }, 1500); });
-    document.querySelectorAll('.form-control').forEach(i => { i.addEventListener('blur', () => { if(i.value && i.checkValidity()) i.classList.replace('is-invalid','is-valid'); }); i.addEventListener('input', () => { if(i.classList.contains('is-invalid') && i.checkValidity()) i.classList.replace('is-invalid','is-valid'); }); });
+    
+    // Logika Pengiriman Form (Simulasi)
+    const form = document.getElementById('contactForm');
+    const formView = document.getElementById('formView');
+    const successView = document.getElementById('successView');
+    const submitBtn = document.getElementById('submitBtn');
+    
+    form.addEventListener('submit', e => { 
+        e.preventDefault(); 
+        e.stopPropagation(); 
+        
+        if (!form.checkValidity()) { 
+            form.classList.add('was-validated'); 
+            return; 
+        } 
+        
+        // Disable button & show spinner
+        submitBtn.disabled = true; 
+        submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Mengirim...'; 
+        
+        // Simulasi request network (1.5 detik)
+        setTimeout(() => { 
+            formView.style.display = 'none'; 
+            successView.classList.add('show'); 
+            form.reset(); 
+            form.classList.remove('was-validated'); 
+        }, 1500); 
+    });
+    
+    // Logika validasi input real-time
+    document.querySelectorAll('.form-control').forEach(i => { 
+        i.addEventListener('blur', () => { 
+            if(i.value && i.checkValidity()) i.classList.replace('is-invalid','is-valid'); 
+        }); 
+        i.addEventListener('input', () => { 
+            if(i.classList.contains('is-invalid') && i.checkValidity()) i.classList.replace('is-invalid','is-valid'); 
+        }); 
+    });
 
+    // Intersection Observer Animasi Masuk
     const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
-    const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if(entry.isIntersecting){ entry.target.style.opacity='1'; entry.target.style.transform='translateY(0)'; observer.unobserve(entry.target); } }); }, observerOptions);
-    document.querySelectorAll('.animate-fade-in').forEach(el => { el.style.opacity='0'; el.style.transform='translateY(20px)'; el.style.transition='opacity 0.6s ease, transform 0.6s ease'; observer.observe(el); });
+    const observer = new IntersectionObserver((entries) => { 
+        entries.forEach(entry => { 
+            if(entry.isIntersecting){ 
+                entry.target.style.opacity='1'; 
+                entry.target.style.transform='translateY(0)'; 
+                observer.unobserve(entry.target); 
+            } 
+        }); 
+    }, observerOptions);
+    
+    document.querySelectorAll('.animate-fade-in').forEach(el => { 
+        el.style.opacity='0'; 
+        el.style.transform='translateY(20px)'; 
+        el.style.transition='opacity 0.6s ease, transform 0.6s ease'; 
+        observer.observe(el); 
+    });
 
-    // 🌸 Theme Toggle Logic
-    const themeToggle = document.getElementById('theme-toggle'); const body = document.body; const savedTheme = localStorage.getItem('theme'); if (savedTheme === 'pink') body.classList.add('pink-theme');
-    themeToggle.addEventListener('click', () => { body.classList.toggle('pink-theme'); const isPink = body.classList.contains('pink-theme'); localStorage.setItem('theme', isPink ? 'pink' : 'light'); updateToggleUI(isPink); });
-    function updateToggleUI(isPink) { if (isPink) { themeToggle.innerHTML = '<i class="bi bi-heart-fill me-1"></i> Pink'; themeToggle.className = 'btn btn-sm btn-outline-danger mt-2 mt-lg-0 ms-lg-3 rounded-pill px-3'; } else { themeToggle.innerHTML = '<i class="bi bi-brightness-high-fill me-1"></i> Light'; themeToggle.className = 'btn btn-sm btn-outline-secondary mt-2 mt-lg-0 ms-lg-3 rounded-pill px-3'; } }
-    updateToggleUI(body.classList.contains('pink-theme'));
+    // Logika Tema (Pink/Light)
+    const themeToggle = document.getElementById('theme-toggle'); 
+    const body = document.body; 
+    
+    function updateToggleUI(isPink) { 
+        if (isPink) { 
+            themeToggle.innerHTML = '<i class="bi bi-heart-fill me-1"></i> Pink'; 
+            themeToggle.className = 'btn btn-sm btn-outline-danger mt-2 mt-lg-0 ms-lg-3 rounded-pill px-3'; 
+        } else { 
+            themeToggle.innerHTML = '<i class="bi bi-brightness-high-fill me-1"></i> Light'; 
+            themeToggle.className = 'btn btn-sm btn-outline-secondary mt-2 mt-lg-0 ms-lg-3 rounded-pill px-3'; 
+        } 
+    }
+    
+    themeToggle.addEventListener('click', () => { 
+        body.classList.toggle('pink-theme'); 
+        const isPink = body.classList.contains('pink-theme'); 
+        localStorage.setItem('theme', isPink ? 'pink' : 'light'); 
+        updateToggleUI(isPink); 
+    });
+    
+    if (localStorage.getItem('theme') === 'pink') { 
+        body.classList.add('pink-theme'); 
+        updateToggleUI(true); 
+    } else {
+        updateToggleUI(false);
+    }
 </script>
 </body>
 </html>
