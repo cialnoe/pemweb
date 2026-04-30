@@ -1,0 +1,166 @@
+:root { 
+    --primary-color: #4f46e5; 
+    --primary-hover: #4338ca; 
+    --secondary-color: #ec4899; 
+    --bg-light: #f8fafc; 
+    --bg-card: #ffffff; 
+    --text-dark: #1e293b; 
+    --text-muted: #64748b; 
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.pink-theme { 
+    --primary-color: #ec4899; 
+    --primary-hover: #db2777; 
+    --secondary-color: #f472b6; 
+    --bg-light: #fff1f2; 
+    --text-dark: #831843; 
+}
+
+body { 
+    font-family: 'Inter', sans-serif; 
+    background: var(--bg-light); 
+    color: var(--text-dark); 
+    overflow-x: hidden; 
+}
+
+.navbar { 
+    background: rgba(255, 255, 255, 0.95) !important; 
+    backdrop-filter: blur(10px); 
+    box-shadow: var(--shadow-sm); 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+}
+.navbar-brand { 
+    font-weight: 700; 
+    color: var(--primary-color) !important; 
+}
+.nav-link { 
+    font-weight: 500; 
+    color: var(--text-dark) !important; 
+    transition: var(--transition); 
+}
+.nav-link:hover, .nav-link.active { 
+    color: var(--primary-color) !important; 
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animate-on-scroll { opacity: 0; }
+.animate-on-scroll.is-visible { 
+    animation: fadeInUp 0.8s forwards cubic-bezier(0.165, 0.84, 0.44, 1); 
+}
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+
+.hero-course { 
+    background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.6)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover; 
+    background-position: center; 
+    padding: 8rem 0 6rem 0; 
+    color: white;
+    position: relative;
+}
+
+.search-container { 
+    background: rgba(255, 255, 255, 0.15); 
+    backdrop-filter: blur(20px); 
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 24px; 
+    padding: 2.5rem; 
+    border: 1px solid rgba(255,255,255,0.2); 
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transform: translateY(40px); /* Efek overlap dengan section di bawahnya */
+    z-index: 10;
+    max-width: 1000px;
+}
+
+.course-card { 
+    border: 1px solid rgba(0,0,0,0.05); 
+    border-radius: 20px; 
+    transition: var(--transition); 
+    background: var(--bg-card); 
+    overflow: hidden; 
+    height: 100%; 
+    display: flex; 
+    flex-direction: column;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+.course-card:hover { 
+    transform: translateY(-10px); 
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); 
+}
+
+/* Pengaturan wadah gambar agar ukurannya seragam (fixed height) */
+.course-img-wrapper { 
+    overflow: hidden; 
+    width: 100%;
+    height: 200px; /* Tinggi absolut agar semua gambar rata */
+    background-color: #f1f5f9; 
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.course-img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; /* Kunci kerapian gambar */
+    object-position: center; 
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+}
+.course-card:hover .course-img { 
+    transform: scale(1.08); /* Efek zoom saat kursor diarahkan */
+}
+
+.course-specs { 
+    display: flex; 
+    gap: 1.5rem; 
+    margin: 1.2rem 0; 
+    padding-bottom: 1.2rem; 
+    border-bottom: 1px solid rgba(0,0,0,0.05); 
+}
+.spec-item { 
+    display: flex; 
+    align-items: center; 
+    gap: 0.5rem; 
+    font-size: 0.85rem; 
+    color: var(--text-muted); 
+    font-weight: 500;
+}
+
+.btn-action { 
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover)); 
+    border: none; 
+    color: white; 
+    font-weight: 600; 
+    padding: 0.8rem 1.5rem; 
+    border-radius: 12px; 
+    transition: var(--transition);
+}
+.btn-action:hover { 
+    transform: translateY(-2px); 
+    box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.3); 
+    color: white; 
+}
+
+.contact-section { 
+    background-color: var(--bg-card); 
+    border-radius: 24px; 
+    box-shadow: var(--shadow-sm); 
+    border: 1px solid rgba(0,0,0,0.05); 
+}
+.wa-btn { 
+    background-color: #25D366; 
+    color: white; 
+    font-weight: 600; 
+    transition: var(--transition); 
+}
+.wa-btn:hover { 
+    background-color: #128C7E; 
+    color: white; 
+    transform: translateY(-2px); 
+    box-shadow: 0 10px 15px -3px rgba(37, 211, 102, 0.3);
+}
