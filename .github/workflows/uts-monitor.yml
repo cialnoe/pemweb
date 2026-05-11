@@ -1,1 +1,20 @@
+name: MONITOR_UTS_PRAKTIKUM
 
+on:
+  push:
+    paths:
+      - 'UTS_PRAKTIKUM_PEMWEB/**'
+
+jobs:
+  tampilkan-link:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate Link
+        run: |
+          echo "### 📂 Hasil Web UTS" >> $GITHUB_STEP_SUMMARY
+          echo "Halaman ini berhasil diperbarui!" >> $GITHUB_STEP_SUMMARY
+          echo "[Klik di sini untuk buka](https://cialnoe.github.io/pemweb/UTS_PRAKTIKUM_PEMWEB/)" >> $GITHUB_STEP_SUMMARY
+          
