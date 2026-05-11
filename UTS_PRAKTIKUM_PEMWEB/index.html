@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noévra Skin - Official Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Noévra Skin</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#products">Katalog</a>
+            <a href="#contact">Konsultasi</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero-section">
+        <div class="hero-content reveal">
+            <h1>Pancarkan Kecantikan Alami Anda</h1>
+            <p>Kurasi perawatan kulit premium untuk kulit sehat, terhidrasi, dan bercahaya.</p>
+        </div>
+    </section>
+
+    <main>
+        <section id="products" class="products-section">
+            <h2 class="section-title reveal">Katalog Skincare</h2>
+            
+            <div class="filter-container reveal">
+                <button class="filter-btn active" data-filter="all">Semua Produk</button>
+                <button class="filter-btn" data-filter="sabun-muka">Sabun Muka</button>
+                <button class="filter-btn" data-filter="moisturizer">Moisturizer</button>
+                <button class="filter-btn" data-filter="salep-jerawat">Salep Jerawat</button>
+            </div>
+
+            <div class="product-grid" id="productGrid">
+                
+                <article class="product-card" data-category="sabun-muka">
+                    <img src="https://www.cetaphil.co.id/on/demandware.static/-/Sites-Galderma-ID-Library/default/dw8e3c22b0/rebranding/product_routine_images/Core_GSC%20236.png" class="product-img" alt="Cetaphil">
+                    <div class="card-body">
+                        <div class="badge">Sabun Muka</div>
+                        <div class="card-header"><h3>Cetaphil Gentle Cleanser 235 ml</h3></div>
+                        <p class="description">Pembersih wajah ikonik yang diformulasikan lembut untuk kulit sensitif.</p>
+                        <div class="meta-info"><span>💧 235 ml</span><span>✨ Kulit Sensitif</span></div>
+                        <div class="card-footer">
+                            <p class="price">Rp 180.932</p>
+                            <a href="https://shopee.co.id/product/1483115042/27683378399?gads_t_sig=gqRjZGVrxHCFomtpsTE0MjUxOnRzc19zZGtfa2V5omt20QABpGFsZ2_SAAAAZKNkZWvAomN0xEAAAAAMRoz0ZUjQw0QlRa--FjB0AKnHQPF7xv4DyGj9-GQwqn4zSdB6gztmw7ebmtsZs9FPJxlVqctc57WUE3IRqmNpcGhlcnRleHTEcwAAAAz1zXEOPIvWFdAGWD8KUEgR3J9C8b5hFZtWIaJunifDx3ZDZ3SFQKQLq6cINtnaEf8qWzH-GqP5CLvTli1dnl_qoT2OLoNz0zHZg85ta7NyFjTFQYTfkXuSuZVpcNQEhwfuTag-1SG1cKs8vOpR0eY" target="_blank" class="btn-buy-default">Beli Sekarang</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="sabun-muka">
+                    <img src="https://i.pinimg.com/1200x/5a/bf/64/5abf64f2e29b3edc5891f59769679a84.jpg" class="product-img" alt="Glad2Glow">
+                    <div class="card-body">
+                        <div class="badge">Sabun Muka</div>
+                        <div class="card-header"><h3>Glad2Glow Milk Amino Acid Cleanser</h3></div>
+                        <p class="description">Sabun cuci muka mengandung Amino Acid, Milk Protein, dan Ceramide.</p>
+                        <div class="meta-info"><span>💧 80 ml</span><span>✨ Kulit Kering</span></div>
+                        <div class="card-footer">
+                            <p class="price">Rp 39.000</p>
+                            <a href="https://shopee.co.id/product/361903206/27339763124?gads_t_sig=gqRjZGVrxHCFomtpsTE0MjUxOnRzc19zZGtfa2V5omt20QABpGFsZ2_SAAAAZKNkZWvAomN0xEAAAAAMRoz0ZUjQw0QlRa--FjB0AKnHQPF7xv4DyGj9-GQwqn4zSdB6gztmw7ebmtsZs9FPJxlVqctc57WUE3IRqmNpcGhlcnRleHTEcQAAAAyvuBdj6GlH7ihHJkLdtYlsIE6DTj-BzSPMYn49NxWCWt9Rae9Ewv4q_Nyw1DteDchVRRKdJSmGCKyZbjUnCXENZWEcSy9BCz7BsuFmGDfOwhBcKxfuKGo_oDdYYEq30YFqpm45Z64Bl7Roq-40" target="_blank" class="btn-buy-default">Beli Sekarang</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="sabun-muka">
+                    <img src="https://i.pinimg.com/1200x/a5/5a/9a/a55a9a0ee0ceb7586ffa7e0d440f16a3.jpg" class="product-img" alt="Skintific">
+                    <div class="card-body">
+                        <div class="badge">Sabun Muka</div>
+                        <div class="card-header"><h3>SKINTIFIC 5X Ceramide Low pH Cleanser</h3></div>
+                        <p class="description">Kombinasi 5 jenis ceramide, amino acid, dan hyaluronic acid.</p>
+                        <div class="meta-info"><span>💧 80 ml</span><span>✨ Kulit Sensitif</span></div>
+                        <div class="card-footer">
+                            <p class="price">Rp 90.000</p>
+                            <a href="https://shopee.co.id/-SKINTIFIC-Resmi-5X-Ceramide-Low-pH-Cleanser-120ml-Skin-Barrier-Facial-Wash-Kulit-Sensitif-i.1517020346.26383315268" target="_blank" class="btn-buy-default">Beli Sekarang</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="sabun-muka">
+                    <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQLmYqhMaVrdn5Iz-atGdWyMfwOS5emDY1xPCETG3Jsk9K9nFP1eqMT7oVl6xRgb58UD80KRavpt0HVacjCLCyBqJrS-LMhUMbpGhFC90pUKLFdxuh2hwuFktU" class="product-img" alt="Avoskin">
+                    <div class="card-body">
+                        <div class="badge">Sabun Muka</div>
+                        <div class="card-header"><h3>Avoskin Natural Sublime Cleanser</h3></div>
+                        <p class="description">Mengandung Marula Oil, Kale Extract, dan Niacinamide.</p>
+                        <div class="meta-info"><span>💧 100 ml</span><span>✨ Semua Jenis Kulit</span></div>
+                        <div class="card-footer">
+                            <p class="price">Rp 95.800</p>
+                            <a href="https://shopee.co.id/Avoskin-Natural-Sublime-Facial-Cleanser-100ml-i.12943675.12407848496" target="_blank" class="btn-buy-default">Beli Sekarang</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="sabun-muka">
+                    <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTQ_N1lILoCJki4mzWzlfWFoR-PRzSE5q5pcXx9be0Lf5HyHBOJlYmOZiNNFGEQLMy-Gi9tfSrbgv5DyFOksUTlQVpD6H3ZUx-KBzPSORt_Ks8xGogJ3dKnT8k" class="product-img" alt="Hada Labo">
+                    <div class="card-body">
+                        <div class="badge">Sabun Muka</div>
+                        <div class="card-header"><h3>Hada Labo Shirojyun Whitening Wash</h3></div>
+                        <p class="description">Mengandung Hyaluronic Acid untuk menjaga kelembapan kulit.</p>
+                        <div class="meta-info"><span>💧 100 ml</span><span>✨ Semua Jenis Kulit</span></div>
+                        <div class="card-footer">
+                            <p class="price">Rp 25.700</p>
+                            <a href="https://shopee.co.id/product/237833134/24675725323?gads_t_sig=gqRjZGVrxHCFomtpsTE0MjUxOnRzc19zZGtfa2V5omt20QABpGFsZ2_SAAAAZKNkZWvAomN0xEAAAAAMRoz0ZUjQw0QlRa--FjB0AKnHQPF7xv4DyGj9-GQwqn4zSdB6gztmw7ebmtsZs9FPJxlVqctc57WUE3IRqmNpcGhlcnRleHTEcQAAAAyaa1d_trleQcntR7Pl90OOSWN6oKIvDtogWwbmlyPrl7j5as338CfNSEStTe4xZuHnF81dmoj1FuxnTiJ3WWj0zVoQ7DCtYzk2YD5Hpk-nbdxzcOujbqFwXXIdqhqraxLXtEp38VvtlG1p2LjA" target="_blank" class="btn-buy-default">Beli Sekarang</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="sabun-muka">
+                    <img src="https://d2qjkwm11akmwu.cloudfront.net/products/16192-1665788850.webp" class="product-img" alt="Himalaya">
+                    <div class="card-body">
+                        <div class="badge">Sabun Muka</div>
+                        <div class="card-header"><h3>Himalaya Purifying Neem Face Wash</h3></div>
+                        <p class="description">Gel yang membantu membersihkan kotoran dan minyak berlebih.</p>
+                        <div class="meta-info"><span>💧 100 ml</span><span>✨ Kulit Berminyak</span></div>
+                        <div class="card-footer">
+                            <p class="price">Rp 35.700</p>
+                            <a href="https://shopee.co.id/product/267061543/29742626168?gads_t_sig=gqRjZGVrxHCFomtpsTE0MjUxOnRzc19zZGtfa2V5omt20QABpGFsZ2_SAAAAZKNkZWvAomN0xEAAAAAMRoz0ZUjQw0QlRa--FjB0AKnHQPF7xv4DyGj9-GQwqn4zSdB6gztmw7ebmtsZs9FPJxlVqctc57WUE3IRqmNpcGhlcnRleHTEcQAAAAzVRC4fRf1hDNue4KwiBJXEWtqn4CO2gj9wht3mtUE06Cy3IOuXfivoDkmUo1v2fpLoJAW7ii71SFsuFWhfAszZuqTFa2YW9LtXwqf-21MDLRjL4QYpnyOyiQYRGAerF4kxhnl7OHHmEifmki-r" target="_blank" class="btn-buy-default">Beli Sekarang</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="moisturizer">
+                    <img src="https://images.openai.com/thumbnails/url/0QBHGnicDcnbCoIwAADQL0qnUKkQoTSvmDhr6JPovM3QTZ2kP9X_9Dd1Xs_30wnBF0OW65HMOxd1dRDlqErtIgpBiUTYIC8d45yO7XW6_M8w75XuEPQym2JHSqwBNTpympSr2PGkBxuE2HQgg1tmokJLZ5a_g752QkpwkinpDDLXbeyQER0kivUExMofse7EN9F4A4qOLj6vsGrBaV-7AlCt9Xw_c3sL2Tj6AftmPL8" class="product-img" alt="Cetaphil Cream">
+                    <div class="card-body">
+                        <div class="badge">Moisturizer</div>
+                        <div class="card-header"><h3>Cetaphil Moisturizing Cream 40ml</h3></div>
+                        <p class="description">Pelembap tekstur tebal untuk kulit kering dan sensitif.</p>
+                        <div class="meta-info"><span>💧 40 ml</span><span>✨ Kulit Kering</span></div>
+                        <div class="card-footer">
+                            <p class="price">Rp 179.500</p>
+                            <a href="https://shopee.co.id/Cetaphil-Moisturizing-Cream-100g-Krim-Pelembab-Wajah-Kulit-untuk-Segala-Jenis-Kulit-i.186214521.5815266964?extraParams=%7B%22display_model_id%22%3A40591746281%2C%22model_selection_logic%22%3A3%7D&sp_atk=15378e1c-287e-4191-9ec9-08bae11a578a&xptdk=15378e1c-287e-4191-9ec9-08bae11a578a" target="_blank" class="btn-buy-default">Beli Sekarang</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="moisturizer">
+                    <img src="https://images.openai.com/static-rsc-1/8yTeyubvidZsB8UPBrB0SdPKR-42NTd4lH3CSL_u1MqkNIRpxL0MwoTN9tjbiDWL6w0mjtuKtc_C2Jp2wl14ainnisCYAXEjxKgpXa44uROKW3W2wdhf-msggfNTtNEIvMPJ6elBXzG3KOmbT3-w-AHtf3a2wjsSyLnyItStdQVSXUyya0dARktFO6mEE9wX-lAFhPL9KKeMUbXil5bBjgQ_DGNWEllcvG8yGpwYAsqVZIpkDH-U8NxJ5lhc2Jyty84tJrLpj7LyN1WNk_uIRA" class="product-img" alt="Skintific Gel">
+                    <div class="card-body">
+                        <div class="badge">Moisturizer</div>
+                        <div class="card-header"><h3>Skintific Sensitive Moisture Gel</h3></div>
+                        <p class="description">Pelembap gel ringan untuk kulit sensitif dan kemerahan.</p>
+                        <div class="meta-info"><span>💧 40 ml</span><span>✨ Kulit Kombinasi</span></div>
+                        <div class="card-footer">
+                            <p class="price">Rp 163.800</p>
+                            <a href="https://shopee.co.id/Skintific-Sensitive-Soothe-Moisturizer-Gel-40g-i.30736001.28324849320?extraParams=%7B%22display_model_id%22%3A227330527705%2C%22model_selection_logic%22%3A3%7D&sp_atk=19d45bf6-f7fe-4a42-a9ef-54c6da2d8c92&xptdk=19d45bf6-f7fe-4a42-a9ef-54c6da2d8c92" target="_blank" class="btn-buy-default">Beli Sekarang</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="moisturizer">
+                    <img src="https://img.lazcdn.com/g/p/2cd784046a0051f4d0309a4a5f272ec9.png_720x720q80.png" class="product-img" alt="Glowsophy">
+                    <div class="card-body">
+                        <div class="badge">Moisturizer</div>
+                        <div class="card-header"><h3>Glowsophy Watermelon Brightening Gel</h3></div>
+                        <p class="description">Pelembap wajah berbentuk gel yang diformulasikan untuk membantu mencerahkan kulit kusam.</p>
+                        <div class="meta-info"><span>💧 100 ml</span><span>✨ Kulit Kombinasi</span></div>
+                        <div class="card-footer">
+                            <p class="price">Rp 39.000</p>
+                            <a href="https://shopee.co.id/product/714408412/27755593773?gads_t_sig=gqRjZGVrxHCFomtpsTE0MjUxOnRzc19zZGtfa2V5omt20QABpGFsZ2_SAAAAZKNkZWvAomN0xEAAAAAMRoz0ZUjQw0QlRa--FjB0AKnHQPF7xv4DyGj9-GQwqn4zSdB6gztmw7ebmtsZs9FPJxlVqctc57WUE3IRqmNpcGhlcnRleHTEcQAAAAzSshY8v5G0_IaPH9atJ2DkGhdOkE5fExvyA_kMAW0AG7j82fIJ55LAOxsFSp4QNpxkr90QY-kMP7mcsKNdplbYy8lFBdHK7bKD0UuM9pKGRlfzeYAh1MrZNKwGooGEuD_OipbsP0fVthtBNOTN" class="btn-buy-default">Beli Sekarang</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="moisturizer">
+                    <img src="https://nihonmart.id/pub/media/catalog/product/cache/8a3fa81d90974d9a7299f2eff309979f/l/i/light_hydrashot_intensive_moisturizer_30g-min.png" class="product-img" alt="Wardah">
+                    <div class="card-body">
+                        <div class="badge">Moisturizer</div>
+                        <div class="card-header"><h3>Wardah Light Hydrashot Intensive</h3></div>
+                        <p class="description">Pelembap wajah tekstur water cream yang ringan seperti gel memberikan kelembapan intens.</p>
+                        <div class="meta-info"><span>💧 50 gr</span><span>✨ Semua Jenis Kulit</span></div>
+                        <div class="card-footer">
+                            <p class="price">Rp 52.000</p>
+                            <a href="gqRjZGVrxHCFomtpsTE0MjUxOnRzc19zZGtfa2V5omt20QABpGFsZ2_SAAAAZKNkZWvAomN0xEAAAAAMRoz0ZUjQw0QlRa" class="btn-buy-default">Beli Sekarang</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="salep-jerawat">
+                    <img src="https://images.openai.com/thumbnails/url/N9oB5nicDcndCoIwGADQJ_IHRWtChGiKOAUjxLqR2uZcmc72admT9Gq9TZ3b8_20AFJ5hsF68lgkMKrBpbd1ruAMguhkuBuqHaQUPd-Om_95fk5RTAqNdtKfrSY6YZfF85gsOHNXXIajqeUp1WosGiSmsexEXTpVemyuVrGWFqeuc6xCM1Bvprqg24H5uk1VYvMDIFwj9NxbUeb_AP2cNdU" class="product-img" alt="Skintific Acne">
+                    <div class="card-body">
+                        <div class="badge">Salep Jerawat</div>
+                        <div class="card-header"><h3>Skintific Salicylic Acid Acne Spot</h3></div>
+                        <p class="description">Membantu membersihkan pori dan merawat jerawat aktif.</p>
+                        <div class="meta-info"><span>💧 10 gr</span><span>✨ Acne Skin</span></div>
+                        <div class="card-footer">
+                            <p class="price">Rp 55.000</p>
+                            <a href="https://shopee.co.id/search?keyword=skintific%20salicylic%20acid%20acne%20spot" target="_blank" class="btn-buy-default">Beli Sekarang</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="salep-jerawat">
+                    <img src="https://medias.watsons.co.id/publishing/WTCID-37263-front-zoom.jpg?version=1737159159" class="product-img" alt="Centella">
+                    <div class="card-body">
+                        <div class="badge">Salep Jerawat</div>
+                        <div class="card-header"><h3>Centella 2% Salicylic Acid Overnight</h3></div>
+                        <p class="description">Kandungan centella asiatica, Salicylic acid dan Niacinamide menenangkan jerawat semalaman.</p>
+                        <div class="meta-info"><span>💧 5 gr</span><span>✨ Acne Skin</span></div>
+                        <div class="card-footer">
+                            <p class="price">Rp 33.560</p>
+                            <a href="https://shopee.co.id/Glad2Glow-Centella-2-Salicylic-Acid-Overnight-Acne-Spot-Treatment-i.308103533.41303253338" target="_blank" class="btn-buy-default">Beli Sekarang</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="salep-jerawat">
+                    <img src="https://guardianindonesia.co.id/media/catalog/product/30/3124081~1_20250618143810_9388.png?auto=webp&format=png&width=640&height=800&fit=cover" class="product-img" alt="Y.O.U">
+                    <div class="card-body">
+                        <div class="badge">Salep Jerawat</div>
+                        <div class="card-header"><h3>Y.O.U AcnePlus Spot Care X</h3></div>
+                        <p class="description">Spot treatment sensasi calming membantu mengurangi kemerahan dan mengempeskan jerawat.</p>
+                        <div class="meta-info"><span>💧 15 gr</span><span>✨ Acne Skin</span></div>
+                        <div class="card-footer">
+                            <p class="price">Rp 43.000</p>
+                            <a href="https://shopee.co.id/Y.O.U-YOU-AcnePlus-Spot-Care-X-Y.O.U-AcnePlus-Spot-Care-X-15gr-Obat-Totol-Jerawat-Obat-i.25598564.22054090854" target="_blank" class="btn-buy-default">Beli Sekarang</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="load-more-container reveal">
+                <button id="loadMoreBtn" class="load-more-btn">Tampilkan Semua Produk</button>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2 class="section-title reveal">Hubungi Kami</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info reveal">
+                    <h3>Mari Berbincang!</h3>
+                    <p>Punya pertanyaan seputar rutinitas skincare? Hubungi kami langsung melalui platform di bawah ini.</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/6281234567890" target="_blank" class="social-btn wa">WhatsApp</a>
+                        <a href="https://instagram.com/noevraskin" target="_blank" class="social-btn ig">Instagram</a>
+                        <a href="https://tiktok.com/@noevraskin" target="_blank" class="social-btn tiktok">TikTok</a>
+                    </div>
+                </div>
+                <div class="contact-form-box reveal">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label>Nama Lengkap</label>
+                            <input type="text" required placeholder="Masukkan nama Anda">
+                        </div>
+                        <div class="form-group">
+                            <label>Alamat Email</label>
+                            <input type="email" required placeholder="nama@gmail.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Pesan Konsultasi</label>
+                            <textarea rows="4" required placeholder="Ceritakan masalah kulit Anda..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Noévra Skin. Seluruh hak cipta dilindungi.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const productCards = Array.from(document.querySelectorAll('.product-card'));
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+            const itemsPerPage = 8;
+            let currentCategory = 'all';
+            let currentDisplayed = 0;
+
+            function filterProducts(isLoadMore = false) {
+                const filteredCards = productCards.filter(card => {
+                    return currentCategory === 'all' || card.getAttribute('data-category') === currentCategory;
+                });
+
+                if (!isLoadMore) {
+                    productCards.forEach(card => {
+                        card.style.display = 'none';
+                        card.classList.remove('show-card');
+                    });
+                    currentDisplayed = 0;
+                }
+
+                const nextLimit = Math.min(currentDisplayed + itemsPerPage, filteredCards.length);
+
+                for (let i = currentDisplayed; i < nextLimit; i++) {
+                    const card = filteredCards[i];
+                    card.style.display = 'flex';
+                    setTimeout(() => { card.classList.add('show-card'); }, 50);
+                }
+
+                currentDisplayed = nextLimit;
+                loadMoreBtn.style.display = (currentDisplayed >= filteredCards.length) ? 'none' : 'inline-block';
+            }
+
+            filterProducts();
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentCategory = btn.getAttribute('data-filter');
+                    filterProducts(false);
+                });
+            });
+
+            loadMoreBtn.addEventListener('click', () => filterProducts(true));
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+        });
+    </script>
+</body>
+</html>
